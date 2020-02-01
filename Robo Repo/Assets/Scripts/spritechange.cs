@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spritechange : MonoBehaviour
+public class SpriteChange : MonoBehaviour
 {
     private SpriteRenderer change;
     private Sprite square, triangle;
