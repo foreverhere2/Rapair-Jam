@@ -12,7 +12,7 @@ public class MenuButtonFunctions : MonoBehaviour
     }
     public void StartButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
     public void CreditsButton()
     {
