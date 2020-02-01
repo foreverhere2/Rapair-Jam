@@ -31,14 +31,14 @@ public class Health : MonoBehaviour
             if (health == 0)
                 StartCoroutine("Death");
         }
-        else if (thing.CompareTag("PartA") || thing.CompareTag("PartB") || thing.CompareTag("PartC"))
+        else if (thing.CompareTag("Part"))
         {
             maxHealth +=1;
             health +=1;
         }
         else if (thing.CompareTag("Gear") && (health < maxHealth))
         {
-            thing.enabled = false;
+            Destroy(thing.gameObject);
             health +=1;
         }
     }
