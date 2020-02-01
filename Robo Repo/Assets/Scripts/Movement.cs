@@ -13,9 +13,14 @@ public class Movement : MonoBehaviour
     public float legJump;
     float moveVelocity;
 
+    Animator thisAnim;
 
     [HideInInspector] public bool isGrounded = true;
 
+    private void Start()
+    {
+        thisAnim = GetComponent<Animator>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
@@ -39,7 +44,8 @@ public class Movement : MonoBehaviour
             rigidBody.velocity = Vector2.up * rigidBody.velocity.y;
         }
 
-
+        thisAnim.SetFloat("DirX", ( rigidBody.velocity.x != 0 ? speed / rigidBody.velocity.x : 0));
+        thisAnim.SetFloat("DirY", (rigidBody.velocity.y != 0 ? jump / rigidBody.velocity.y : 0));
     }
 
     void OnTriggerEnter2D(Collider2D thing)

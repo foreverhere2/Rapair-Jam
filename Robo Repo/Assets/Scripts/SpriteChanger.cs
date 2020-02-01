@@ -5,27 +5,24 @@ using UnityEngine;
 public class SpriteChanger : MonoBehaviour
 {
     public GameObject playerModel;
-    public Sprite head, torso, legs, arms;
-    public Animation anim;
+    public Sprite torso, legs, arms;
 
 
     private void OnCollisionEnter2D(Collision2D part)
     {
         if (part.gameObject.name == "Arms")
         {
-
+            playerModel.gameObject.GetComponent<SpriteRenderer>().sprite = arms;
         }
         else if (part.gameObject.name == "Legs")
         {
-
+            playerModel.gameObject.GetComponent<SpriteRenderer>().sprite = legs;
         }
         else if (part.gameObject.name == "Torso")
         {
-
+            playerModel.gameObject.GetComponent<SpriteRenderer>().sprite = torso;
         }
     }
-
-
 
     /* Start is called before the first frame update
     void Start()
