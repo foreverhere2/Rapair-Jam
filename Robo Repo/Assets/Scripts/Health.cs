@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     public Image health3;
     public Image health4;
     public Sprite EmptyHealth;
+    public Sprite FullHealth;
 
 
     private void Start()
@@ -22,56 +23,75 @@ public class Health : MonoBehaviour
         health4.enabled = false;
     }
 
-    void OnCollisionEnter2D(Collider thing)
+    void OnCollisionEnter2D(Collider2D thing)
     {
         if (thing.CompareTag("Enemy"))
         {
-            health = health - 1;
+            health -=1;
             if (health == 0)
-                StartCoroutine("death");
+                StartCoroutine("Death");
         }
         else if (thing.CompareTag("PartA") || thing.CompareTag("PartB") || thing.CompareTag("PartC"))
         {
-            maxHealth = maxHealth + 1;
-            health = health + 1;
+            maxHealth +=1;
+            health +=1;
         }
         else if (thing.CompareTag("Gear") && (health < maxHealth))
         {
             thing.enabled = false;
-            health = health + 1;
+            health +=1;
         }
     }
 
     void Update()
     {
-        if (health == 1)
+        switch (maxHealth)
         {
-            health1.enabled = true;
+            case 2:
+                health2.enabled = true;
+                break;
+            case 3:
+                health3.enabled = false;
+                break;
+            case 4:
+                health4.enabled = true;
+                break;
         }
-        else if (maxHealth == 2)
+
+        switch (health)
         {
-            health1.enabled = true;
-            health2.enabled = true;
-        }
-        else if (maxHealth == 3)
-        {
-            health1.enabled = true;
-            health2.enabled = true;
-            health3.enabled = true;
-        }
-        else if (maxHealth == 4)
-        {
-            health1.enabled = true;
-            health2.enabled = true;
-            health3.enabled = true;
-            health4.enabled = true;
+            case 1:
+                health1.sprite = FullHealth;
+                health2.sprite = EmptyHealth;
+                health3.sprite = EmptyHealth;
+                health4.sprite = EmptyHealth;
+                break;
+            case 2:
+                health1.sprite = FullHealth;
+                health2.sprite = FullHealth;
+                health3.sprite = EmptyHealth;
+                health4.sprite = EmptyHealth;
+                break;
+            case 3:
+                health1.sprite = FullHealth;
+                health2.sprite = FullHealth;
+                health3.sprite = FullHealth;
+                health4.sprite = EmptyHealth;
+                break;
+            case 4:
+                health1.sprite = FullHealth;
+                health2.sprite = FullHealth;
+                health3.sprite = FullHealth;
+                health4.sprite = FullHealth;
+                break;
         }
 
     }
 
-    IEnumerator death()
+    IEnumerator Death()
     {
-        health1.setactive
-        SceneManager.LoadScene(SceneManager.GetActiveScene());
+        health1.sprite = EmptyHealth;
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(1);
     }
 }
