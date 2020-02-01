@@ -13,7 +13,6 @@ public class Health : MonoBehaviour
     public Movement movement;
     public Color white;
     public Color grey;
-    private bool thisisliterallynothing;
     private void Start()
     {
         health = maxHealth;

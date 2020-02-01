@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: PlatformPiston
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: -4911517613821492596, guid: 39044ce9561b3d54a8cebb9a1577fa55, type: 3}
+  - {fileID: -3071601979699599040, guid: 39044ce9561b3d54a8cebb9a1577fa55, type: 3}
+  - {fileID: 9054689190351210999, guid: 39044ce9561b3d54a8cebb9a1577fa55, type: 3}
+  - {fileID: 1166235871916738738, guid: 39044ce9561b3d54a8cebb9a1577fa55, type: 3}
+  - {fileID: 4005960226509812240, guid: 39044ce9561b3d54a8cebb9a1577fa55, type: 3}
+  - {fileID: 6444977880504210608, guid: 39044ce9561b3d54a8cebb9a1577fa55, type: 3}
+  m_MinSpeed: 6
+  m_MaxSpeed: 6
   m_AnimationStartTime: 0
