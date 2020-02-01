@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour
     public bool isDead = false;
     public float speed;
     public float jump;
-    float moveVelocity;
 
 
     [HideInInspector] public bool isGrounded = true;
