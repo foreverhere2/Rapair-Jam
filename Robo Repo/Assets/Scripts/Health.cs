@@ -54,7 +54,6 @@ public class Health : MonoBehaviour
         {
             if(i >= 0)
             {
-                Debug.Log(i);
                 healthImage[i].sprite = i == health ? EmptyHealth : FullHealth;
             }
         }
