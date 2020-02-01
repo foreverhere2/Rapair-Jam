@@ -7,7 +7,9 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rigidBody;
     public bool isDead = false;
     public float speed;
-    public float baseJump;
+    public float torsoSpeed;
+    public float jump;
+    public float torsoJump;
     public float legJump;
     float moveVelocity;
 
@@ -20,7 +22,7 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded && !isDead)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, baseJump);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jump);
                 isGrounded = false;
             }
         }
@@ -47,10 +49,11 @@ public class Movement : MonoBehaviour
 
         }
         else if (thing.gameObject.name == "Legs")
-            baseJump = legJump;
+            jump = legJump;
         else if (thing.gameObject.name == "Torso")
         {
-
+            speed = torsoSpeed;
+            jump = torsoJump;
         }
     }
     void OnCollisionEnter2D()
