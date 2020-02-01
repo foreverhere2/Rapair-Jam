@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    private int maxHealth = 1;
-    private int health = 1;
+    public int maxHealth = 1;
+    public int health = 1;
     public Image health1;
     public Image health2;
     public Image health3;
     public Image health4;
     public Sprite EmptyHealth;
     public Sprite FullHealth;
-
+    public Movement movement;
 
     private void Start()
     {
@@ -23,20 +23,22 @@ public class Health : MonoBehaviour
         health4.enabled = false;
     }
 
-    void OnCollisionEnter2D(Collider2D thing)
+    void OnTriggerEnter2D(Collider2D thing)
     {
-        if (thing.CompareTag("Enemy"))
+        Debug.Log("Collided with " + thing.gameObject.name);
+        if (thing.gameObject.CompareTag("Enemy"))
         {
             health -=1;
             if (health == 0)
                 StartCoroutine("Death");
         }
-        else if (thing.CompareTag("Part"))
+        else if (thing.gameObject.CompareTag("Part"))
         {
+            Destroy(thing.gameObject);
             maxHealth +=1;
             health +=1;
         }
-        else if (thing.CompareTag("Gear") && (health < maxHealth))
+        else if (thing.gameObject.CompareTag("Gear") && (health < maxHealth))
         {
             Destroy(thing.gameObject);
             health +=1;
@@ -51,7 +53,7 @@ public class Health : MonoBehaviour
                 health2.enabled = true;
                 break;
             case 3:
-                health3.enabled = false;
+                health3.enabled = true;
                 break;
             case 4:
                 health4.enabled = true;
@@ -91,6 +93,7 @@ public class Health : MonoBehaviour
     IEnumerator Death()
     {
         health1.sprite = EmptyHealth;
+        movement.enabled = false;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(1);
     }
