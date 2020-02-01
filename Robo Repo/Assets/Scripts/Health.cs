@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     public Sprite EmptyHealth;
     public Sprite FullHealth;
     public Movement movement;
-
+    private bool thisisliterallynothing;
     private void Start()
     {
         health = maxHealth;
