@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
             if (health == 0)
                 StartCoroutine("Death");
         }
-        else if (thing.gameObject.CompareTag("Part"))
+        else if (thing.gameObject.CompareTag("Part") && maxHealth + 1 <= healthImage.Length)
         {
             Destroy(thing.gameObject);
             maxHealth += 1;
@@ -54,6 +54,7 @@ public class Health : MonoBehaviour
         {
             if(i >= 0)
             {
+                Debug.Log(i);
                 healthImage[i].sprite = i == health ? EmptyHealth : FullHealth;
             }
         }
