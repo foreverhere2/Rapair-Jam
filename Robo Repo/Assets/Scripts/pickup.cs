@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pickup : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
     private SpriteRenderer change;
     private Sprite player, square;
@@ -24,7 +24,7 @@ public class pickup : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        movement player = collision.GetComponent<movement>();
+        Movement player = collision.GetComponent<Movement>();
 
         if (player != null)
         {
