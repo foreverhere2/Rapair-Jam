@@ -93,7 +93,7 @@ public class Health : MonoBehaviour
     IEnumerator Death()
     {
         health1.sprite = EmptyHealth;
-        movement.enabled = false;
+        movement.isDead = true;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(1);
     }
