@@ -1077,9 +1077,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1355146275}
   - component: {fileID: 1355146274}
-  - component: {fileID: 1355146271}
   - component: {fileID: 1355146273}
   - component: {fileID: 1355146272}
+  - component: {fileID: 1355146271}
   - component: {fileID: 1355146270}
   m_Layer: 0
   m_Name: Player
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   healthSprite: {fileID: 21300000, guid: 7c37192ee8e22e949903e3e2ee0eaa1e, type: 3}
   movement: {fileID: 1355146272}
   white: {r: 1, g: 1, b: 1, a: 1}
-  grey: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  grey: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
 --- !u!114 &1355146272
 MonoBehaviour:
   m_ObjectHideFlags: 0
