@@ -9,14 +9,19 @@ public class Health : MonoBehaviour
     private int maxHealth = 1;
     private int health;
     public Image[] healthImage;
-    public Sprite EmptyHealth;
-    public Sprite FullHealth;
+    public Sprite healthSprite;
     public Movement movement;
+    public Color white;
+    public Color grey;
     private bool thisisliterallynothing;
     private void Start()
     {
         health = maxHealth;
-        for(int i = 1; i < 4; i += 1) { healthImage[i].enabled = false; }
+        for(int i = 1; i < 4; i += 1)
+        {
+            healthImage[i].color = grey;
+            healthImage[i].enabled = false;
+        }
         UpdateHealth();
     }
 
@@ -54,7 +59,7 @@ public class Health : MonoBehaviour
         {
             if(i >= 0)
             {
-                healthImage[i].sprite = i == health ? EmptyHealth : FullHealth;
+                healthImage[i].color = i == health ? grey : white;
             }
         }
     }
