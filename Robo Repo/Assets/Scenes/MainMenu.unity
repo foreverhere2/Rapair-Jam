@@ -384,7 +384,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -395,8 +395,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " Tristan Sistare - programmer/ui\n *insert other people's names*\n test
-    line\n test line\n test line\n test line\n test line\n test line"
+  m_Text: " Tristan Sistare - Programmer\n Julian Herman - Character maker\n Haylie
+    Ingels - Programmer\n Brandon DeLuso - Artist\n Nate Smith - Level Design\n Dan
+    Dennis - Drawer\n Jamear Venette - Programmer"
 --- !u!222 &765193183
 CanvasRenderer:
   m_ObjectHideFlags: 0
