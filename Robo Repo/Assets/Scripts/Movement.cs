@@ -23,7 +23,6 @@ public class Movement : MonoBehaviour
             if (isGrounded && !isDead)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jump);
-                isGrounded = false;
             }
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -59,5 +58,9 @@ public class Movement : MonoBehaviour
     void OnCollisionEnter2D()
     {
         isGrounded = true;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 }
