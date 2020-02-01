@@ -66,6 +66,6 @@ public class Health : MonoBehaviour
     {
         movement.isDead = true;
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
