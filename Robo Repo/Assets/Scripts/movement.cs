@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     float moveVelocity;
 
 
-    bool isGrounded = true;
+    [HideInInspector] public bool isGrounded = true;
 
     void Update()
     {

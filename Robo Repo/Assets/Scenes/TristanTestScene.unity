@@ -464,7 +464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95408bc7290f3a042a94c8889de7ea7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1355146275}
+  cam: {fileID: 668210690}
+  player: {fileID: 1355146272}
 --- !u!1 &744540487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1046,8 @@ MonoBehaviour:
   rigidBody: {fileID: 1355146270}
   isDead: 0
   speed: 6
-  jump: 5
+  jump: 10
+  isGrounded: 1
 --- !u!212 &1355146273
 SpriteRenderer:
   m_ObjectHideFlags: 0
