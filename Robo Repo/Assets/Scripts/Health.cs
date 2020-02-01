@@ -6,21 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 1;
-    public int health = 1;
-    public Image health1;
-    public Image health2;
-    public Image health3;
-    public Image health4;
+    private int maxHealth = 1;
+    private int health;
+    public Image[] healthImage;
     public Sprite EmptyHealth;
     public Sprite FullHealth;
     public Movement movement;
 
     private void Start()
     {
-        health2.enabled = false;
-        health3.enabled = false;
-        health4.enabled = false;
+        health = maxHealth;
+        for(int i = 1; i < 4; i += 1) { healthImage[i].enabled = false; }
+        UpdateHealth();
     }
 
     void OnTriggerEnter2D(Collider2D thing)
@@ -28,71 +25,41 @@ public class Health : MonoBehaviour
         Debug.Log("Collided with " + thing.gameObject.name);
         if (thing.gameObject.CompareTag("Enemy"))
         {
-            health -=1;
+            health -= 1;
+            UpdateHealth();
             if (health == 0)
                 StartCoroutine("Death");
         }
         else if (thing.gameObject.CompareTag("Part"))
         {
             Destroy(thing.gameObject);
-            maxHealth +=1;
-            health +=1;
+            maxHealth += 1;
+            health += 1;
+            UpdateHealth();
         }
         else if (thing.gameObject.CompareTag("Gear") && (health < maxHealth))
         {
             Destroy(thing.gameObject);
-            health +=1;
+            health += 1;
+            UpdateHealth();
         }
     }
-
-    void Update()
+    void UpdateHealth()
     {
-        switch (maxHealth)
+        for(int i = maxHealth - 1; i < maxHealth; i += 1)
         {
-            case 2:
-                health2.enabled = true;
-                break;
-            case 3:
-                health3.enabled = true;
-                break;
-            case 4:
-                health4.enabled = true;
-                break;
+            healthImage[i].enabled = true;
         }
-
-        switch (health)
+        for(int i = health - 2; i <= health; i += 1)
         {
-            case 1:
-                health1.sprite = FullHealth;
-                health2.sprite = EmptyHealth;
-                health3.sprite = EmptyHealth;
-                health4.sprite = EmptyHealth;
-                break;
-            case 2:
-                health1.sprite = FullHealth;
-                health2.sprite = FullHealth;
-                health3.sprite = EmptyHealth;
-                health4.sprite = EmptyHealth;
-                break;
-            case 3:
-                health1.sprite = FullHealth;
-                health2.sprite = FullHealth;
-                health3.sprite = FullHealth;
-                health4.sprite = EmptyHealth;
-                break;
-            case 4:
-                health1.sprite = FullHealth;
-                health2.sprite = FullHealth;
-                health3.sprite = FullHealth;
-                health4.sprite = FullHealth;
-                break;
+            if(i >= 0)
+            {
+                healthImage[i].sprite = i == health ? EmptyHealth : FullHealth;
+            }
         }
-
     }
-
     IEnumerator Death()
     {
-        health1.sprite = EmptyHealth;
         movement.isDead = true;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(1);
