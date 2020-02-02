@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 2019526579705084782}
   - component: {fileID: 8120711290443032838}
   - component: {fileID: 1555635137}
+  - component: {fileID: 7488713013606639082}
+  - component: {fileID: 2066593074815074281}
+  - component: {fileID: 1538381191092156476}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -71,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6895495282096838205, guid: 3c4f57e023093c748ac4bf23715df5db,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -172,3 +175,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46391916, y: 0.14681101}
   m_EdgeRadius: 0
+--- !u!114 &7488713013606639082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111400588207609230}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ab881422720e841ad3a05f0450b464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  groundDetection: {fileID: 0}
+--- !u!114 &2066593074815074281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111400588207609230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c200c01be811d4c822ef739cf33da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  isDead: 0
+  animator: {fileID: 0}
+  target: {fileID: 0}
+  rigidBody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+--- !u!50 &1538381191092156476
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111400588207609230}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
