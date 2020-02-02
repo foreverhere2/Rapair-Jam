@@ -11,10 +11,16 @@ public class Breakable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("PlayerPunch"))
+        if (col.CompareTag("Player"))
         {
-            thisAnim.SetBool("isDestroyed", true);
-            thisCollider.enabled = false;
+            StartCoroutine("Destroyed");
         }
+    }
+
+    IEnumerator Destroyed()
+    {
+        thisAnim.SetBool("isDestroyed", true);
+        yield return new WaitForSeconds(2f);
+        thisCollider.enabled = false;
     }
 }
