@@ -173,49 +173,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 64
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cdd0ba31f94c1084da1cef5c9f8fbf9e
-      internalID: 7742942751456907717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Obstacle_Spikes_Static_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 19
-        width: 64
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fa04b23616927941abf49efebda09de
-      internalID: 3395842287669194027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Obstacle_Spikes_Static_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 16
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e571001d26e7a6544b0cafbd3eeaa88c
-      internalID: -4239584346206264873
+      spriteID: a1af3d292369aca41b41e9608a034aa0
+      internalID: 7742942751456907717
       vertices: []
       indices: 
       edges: []
