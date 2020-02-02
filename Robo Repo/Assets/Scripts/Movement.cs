@@ -72,7 +72,7 @@ public class Movement : MonoBehaviour
             }
         }
     }
-    void OnCollisionEnter2D()
+    private void OnCollisionStay2D(Collision2D collision)
     {
         isGrounded = true;
     }

@@ -35,10 +35,21 @@ public class Health : MonoBehaviour
         Debug.Log("Collided with " + thing.gameObject.name);
         if (thing.gameObject.CompareTag("Enemy"))
         {
-            health -= 1;
-            UpdateHealth();
-            if (health == 0)
-                StartCoroutine("Death");
+            if(thing.gameObject.GetComponent<Animator>() != null && !movement.isGrounded)
+            {
+                thing.gameObject.GetComponent<Animator>().SetTrigger("Squish");
+                thing.tag = "Untagged";
+            }
+            else
+            {
+                health -= 1;
+                UpdateHealth();
+                if (health == 0)
+                {
+                    StartCoroutine("Death");
+                }
+            }
+
         }
         else if (thing.gameObject.CompareTag("Part") && maxHealth + 1 <= healthImage.Length)
         {
