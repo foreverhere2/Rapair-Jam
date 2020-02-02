@@ -15,6 +15,12 @@ public class Health : MonoBehaviour
     public Color grey;
     private void Start()
     {
+        for(int i = 1; i <= 4; i += 1)
+        {
+            healthImage[i - 1] = healthImage[i - 1] == null ? GameObject.Find("Health" + i.ToString()).GetComponent<Image>() : healthImage[i - 1];
+        }
+        healthSprite = healthSprite == null ? (Sprite)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Sprites/Health.png", typeof(Sprite)) : healthSprite;
+        movement = movement == null ? GameObject.Find("Player").GetComponent<Movement>() : movement;
         health = maxHealth;
         for(int i = 1; i < 4; i += 1)
         {

@@ -19,9 +19,9 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        rigidBody = rigidBody == null ? GetComponent<Rigidbody2D>() : rigidBody;
-        thisAnim = thisAnim == null ? GetComponent<Animator>() : thisAnim;
-        spriteRenderer = spriteRenderer == null ? GetComponent<SpriteRenderer>() : spriteRenderer;
+        rigidBody = rigidBody == null ? gameObject.GetComponent<Rigidbody2D>() : rigidBody;
+        thisAnim = thisAnim == null ? gameObject.GetComponent<Animator>() : thisAnim;
+        spriteRenderer = spriteRenderer == null ? gameObject.GetComponent<SpriteRenderer>() : spriteRenderer;
     }
     void Update()
     {

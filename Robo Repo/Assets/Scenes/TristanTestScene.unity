@@ -239,18 +239,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1511d9532f8b624aaef66e0ec164fc7, type: 3}
---- !u!114 &444925405 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3599570068533757600, guid: d1511d9532f8b624aaef66e0ec164fc7,
-    type: 3}
-  m_PrefabInstance: {fileID: 356385438}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &468237100
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,18 +403,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 668210690}
   player: {fileID: 1355146272}
---- !u!114 &916942770 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3599570067861601869, guid: d1511d9532f8b624aaef66e0ec164fc7,
-    type: 3}
-  m_PrefabInstance: {fileID: 356385438}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1355146269
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,12 +460,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage:
-  - {fileID: 444925405}
-  - {fileID: 916942770}
-  - {fileID: 1457178103}
-  - {fileID: 1413003303}
-  healthSprite: {fileID: 21300000, guid: 7c37192ee8e22e949903e3e2ee0eaa1e, type: 3}
-  movement: {fileID: 1355146272}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  healthSprite: {fileID: 0}
+  movement: {fileID: 0}
   white: {r: 1, g: 1, b: 1, a: 1}
   grey: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
 --- !u!114 &1355146272
@@ -505,14 +481,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1355146270}
-  thisAnim: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  thisAnim: {fileID: 1355146277}
+  spriteRenderer: {fileID: 1355146273}
   isDead: 0
   speed: 2
-  torsoSpeed: 5
+  torsoSpeed: 3
   jump: 1
-  torsoJump: 2
-  legJump: 10
+  torsoJump: 3
+  legJump: 8
   isGrounded: 1
 --- !u!212 &1355146273
 SpriteRenderer:
@@ -627,30 +603,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1413003303 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3599570067234558917, guid: d1511d9532f8b624aaef66e0ec164fc7,
-    type: 3}
-  m_PrefabInstance: {fileID: 356385438}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1457178103 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3599570066769576285, guid: d1511d9532f8b624aaef66e0ec164fc7,
-    type: 3}
-  m_PrefabInstance: {fileID: 356385438}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1850580198
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,11 @@ public class CameraFollow : MonoBehaviour
     
     private Vector3 empty = Vector3.zero;
 
+    private void Start()
+    {
+        cam = cam == null ? GetComponent<Camera>() : cam;
+        player = player ?? GameObject.Find("Player").GetComponent<Movement>();
+    }
     void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position, player.gameObject.transform.TransformPoint(Vector3.back * 10f + Vector3.up * 1.5f), ref empty, .3f);
