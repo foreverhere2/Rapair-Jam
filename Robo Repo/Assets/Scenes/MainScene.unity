@@ -1301,6 +1301,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3098162859178164382, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
+        type: 3}
+      propertyPath: torsoJump
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098162859178164382, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
+        type: 3}
+      propertyPath: torsoSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098162859178164382, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
+        type: 3}
+      propertyPath: legJump
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3098162859178164381, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1355,21 +1370,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098162859178164382, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
-        type: 3}
-      propertyPath: torsoJump
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098162859178164382, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
-        type: 3}
-      propertyPath: torsoSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098162859178164382, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
-        type: 3}
-      propertyPath: legJump
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3098162859178164374, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
         type: 3}
