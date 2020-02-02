@@ -38,6 +38,16 @@ public class Health : MonoBehaviour
             if(thing.gameObject.GetComponent<Animator>() != null && !movement.isGrounded)
             {
                 thing.gameObject.GetComponent<Animator>().SetTrigger("Squish");
+                if(thing.gameObject.GetComponent<EnemyFollow>() != null)
+                {
+                    thing.gameObject.GetComponent<EnemyFollow>().isDead = true;
+                }
+                Collider2D[] temp = thing.gameObject.GetComponents<PolygonCollider2D>();
+                for(int i = 0; i < temp.Length; i += 1)
+                {
+                    temp[i].enabled = false;
+                }
+                thing.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                 thing.tag = "Untagged";
             }
             else
