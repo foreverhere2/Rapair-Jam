@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
+    public Animator thisAnim;
+    public SpriteRenderer spriteRenderer;
     public bool isDead = false;
     public float speed;
     public float torsoSpeed;
@@ -13,13 +15,13 @@ public class Movement : MonoBehaviour
     public float legJump;
     float moveVelocity;
 
-    Animator thisAnim;
-
     [HideInInspector] public bool isGrounded = true;
 
     private void Start()
     {
-        thisAnim = GetComponent<Animator>();
+        rigidBody = rigidBody == null ? GetComponent<Rigidbody2D>() : rigidBody;
+        thisAnim = thisAnim == null ? GetComponent<Animator>() : thisAnim;
+        spriteRenderer = spriteRenderer == null ? GetComponent<SpriteRenderer>() : spriteRenderer;
     }
     void Update()
     {
@@ -33,10 +35,12 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             rigidBody.velocity = Vector2.right * (!isDead ? -speed : rigidBody.velocity.x) + Vector2.up * rigidBody.velocity.y;
+            spriteRenderer.flipX = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             rigidBody.velocity = Vector2.right * (!isDead ? speed : rigidBody.velocity.x) + Vector2.up * rigidBody.velocity.y;
+            spriteRenderer.flipX = false;
         }
         if ((Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)))
         {
@@ -49,16 +53,23 @@ public class Movement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D thing)
     {
-        if (thing.gameObject.name == "Arms")
+        if (thing.CompareTag("Part"))
         {
-
-        }
-        else if (thing.gameObject.name == "Legs")
-            jump = legJump;
-        else if (thing.gameObject.name == "Torso")
-        {
-            speed = torsoSpeed;
-            jump = torsoJump;
+            if (thing.gameObject.name == "Arms")
+            {
+                thisAnim.SetTrigger("ArmsAquisition");
+            }
+            else if (thing.gameObject.name == "Legs")
+            {
+                jump = legJump;
+                thisAnim.SetTrigger("LegsAquisition");
+            }
+            else if (thing.gameObject.name == "Torso")
+            {
+                speed = torsoSpeed;
+                jump = torsoJump;
+                thisAnim.SetTrigger("TorsoAquisition");
+            }
         }
     }
     void OnCollisionEnter2D()
