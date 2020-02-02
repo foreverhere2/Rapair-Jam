@@ -8,6 +8,8 @@ TagManager:
   - Part
   - Gear
   - Breakable
+  - House
+  - Kill
   layers:
   - Default
   - TransparentFX
