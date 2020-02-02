@@ -13,7 +13,12 @@ public class Movement : MonoBehaviour
     public float jump;
     public float torsoJump;
     public float legJump;
+
+    public CircleCollider2D headCol, torsoCol1, legCol1;
+    public PolygonCollider2D torsoCol2, legCol2;
+
     float moveVelocity;
+
 
     [HideInInspector] public bool isGrounded = true;
 
@@ -22,6 +27,11 @@ public class Movement : MonoBehaviour
         rigidBody = rigidBody == null ? gameObject.GetComponent<Rigidbody2D>() : rigidBody;
         thisAnim = thisAnim == null ? gameObject.GetComponent<Animator>() : thisAnim;
         spriteRenderer = spriteRenderer == null ? gameObject.GetComponent<SpriteRenderer>() : spriteRenderer;
+
+        torsoCol1.enabled = false;
+        torsoCol2.enabled = false;
+        legCol1.enabled = false;
+        legCol2.enabled = false;
     }
     void Update()
     {
@@ -63,12 +73,21 @@ public class Movement : MonoBehaviour
             {
                 jump = legJump;
                 thisAnim.SetTrigger("LegsAquisition");
+
+                torsoCol1.enabled = false;
+                torsoCol2.enabled = false;
+                legCol1.enabled = true;
+                legCol2.enabled = true;
             }
             else if (thing.gameObject.name == "Torso")
             {
                 speed = torsoSpeed;
                 jump = torsoJump;
                 thisAnim.SetTrigger("TorsoAquisition");
+
+                headCol.enabled = false;
+                torsoCol1.enabled = true;
+                torsoCol2.enabled = true;
             }
         }
     }
