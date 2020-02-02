@@ -6,6 +6,7 @@ public class EnemyFollow : MonoBehaviour
 {
     public float speed;
     public static float health = 3;
+    public Animator animator;
 
     private Transform target;
     // Start is called before the first frame update
@@ -22,9 +23,12 @@ public class EnemyFollow : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
-    public void OnTriggerEnter2D(Collider2D Collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if(collision.name == "Player")
+        {
+
+        }
     }
 
    
