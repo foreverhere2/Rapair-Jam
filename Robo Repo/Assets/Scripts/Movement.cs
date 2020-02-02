@@ -17,6 +17,8 @@ public class Movement : MonoBehaviour
     public CircleCollider2D headCol, torsoCol1, legCol1;
     public PolygonCollider2D torsoCol2, legCol2;
 
+    public BoxCollider2D punchBox;
+
     float moveVelocity;
 
 
@@ -32,6 +34,8 @@ public class Movement : MonoBehaviour
         torsoCol2.enabled = false;
         legCol1.enabled = false;
         legCol2.enabled = false;
+
+        punchBox.enabled = false;
     }
     void Update()
     {
@@ -55,6 +59,11 @@ public class Movement : MonoBehaviour
         if ((Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)))
         {
             rigidBody.velocity = Vector2.up * rigidBody.velocity.y;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StartCoroutine("Punching");
         }
 
         thisAnim.SetFloat("DirX", ( rigidBody.velocity.x != 0 ? speed / rigidBody.velocity.x : 0));
@@ -98,5 +107,14 @@ public class Movement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isGrounded = false;
+    }
+
+    IEnumerator Punching()
+    {
+        thisAnim.SetBool("isPunching", true);
+        punchBox.enabled = true;
+        yield return new WaitForSeconds(1f);
+        punchBox.enabled = false;
+        thisAnim.SetBool("isPunching", false);
     }
 }
