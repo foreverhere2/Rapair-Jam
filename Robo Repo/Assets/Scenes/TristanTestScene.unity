@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 200883169935105235, guid: 1dfda24d66434bf469ea065555851316,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1075845
+      value: -9.75
       objectReference: {fileID: 0}
     - target: {fileID: 200883169935105235, guid: 1dfda24d66434bf469ea065555851316,
         type: 3}
@@ -484,9 +484,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f531e815b68992c48a933422f968fff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1355146275 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 837419009023018076, guid: 5cdf3c5d58e88ae4fb78b5ce40806052,
+    type: 3}
+  m_PrefabInstance: {fileID: 837419008205512831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1555635132 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6111400588207609230, guid: 1dfda24d66434bf469ea065555851316,
+    type: 3}
+  m_PrefabInstance: {fileID: 1271271490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1555635134 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2019526579705084782, guid: 1dfda24d66434bf469ea065555851316,
     type: 3}
   m_PrefabInstance: {fileID: 1271271490}
   m_PrefabAsset: {fileID: 0}
@@ -533,6 +545,45 @@ PolygonCollider2D:
       - {x: 0.34785938, y: 0.101421356}
       - {x: 0.34178472, y: 0.30321336}
       - {x: 0.23240972, y: 0.3657136}
+--- !u!114 &1555635139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555635132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c200c01be811d4c822ef739cf33da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  isDead: 0
+  animator: {fileID: 1555635134}
+  target: {fileID: 1355146275}
+  rigidBody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+--- !u!50 &1555635140
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555635132}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1850580198
 GameObject:
   m_ObjectHideFlags: 0
