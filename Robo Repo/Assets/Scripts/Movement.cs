@@ -76,12 +76,13 @@ public class Movement : MonoBehaviour
         {
             if (thing.gameObject.name == "Arms")
             {
-                thisAnim.SetTrigger("ArmsAquisition");
+                StartCoroutine("Arms");
             }
             else if (thing.gameObject.name == "Legs")
             {
                 jump = legJump;
-                thisAnim.SetTrigger("LegsAquisition");
+
+                StartCoroutine("Legs");
 
                 torsoCol1.enabled = false;
                 torsoCol2.enabled = false;
@@ -92,7 +93,8 @@ public class Movement : MonoBehaviour
             {
                 speed = torsoSpeed;
                 jump = torsoJump;
-                thisAnim.SetTrigger("TorsoAquisition");
+
+                StartCoroutine("Torso");
 
                 headCol.enabled = false;
                 torsoCol1.enabled = true;
@@ -116,5 +118,32 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(1f);
         punchBox.enabled = false;
         thisAnim.SetBool("isPunching", false);
+    }
+
+    IEnumerator Legs()
+    {
+        thisAnim.SetTrigger("LegsAquisition");
+        isDead = true;
+        yield return new WaitForSeconds(1.5f);
+        isDead = false;
+        thisAnim.SetTrigger("FinishAnim");
+    }
+
+    IEnumerator Arms()
+    {
+        thisAnim.SetTrigger("ArmsAquisition");
+        isDead = true;
+        yield return new WaitForSeconds(2f);
+        isDead = false;
+        thisAnim.SetTrigger("FinishAnim");
+    }
+
+    IEnumerator Torso()
+    {
+        thisAnim.SetTrigger("TorsoAquisition");
+        isDead = true;
+        yield return new WaitForSeconds(2f);
+        isDead = false;
+        thisAnim.SetTrigger("FinishAnim");
     }
 }
