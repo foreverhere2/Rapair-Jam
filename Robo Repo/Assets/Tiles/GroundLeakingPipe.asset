@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: GroundLeakingPipe
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -953398216176290838, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: 4267384821965623495, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: 5069445435258755171, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: -3572980320338458032, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: -4556486914376188185, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: -2694350208058693667, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: 2435236079481487678, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: -5967837256621852582, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
+  - {fileID: 6217245712107367486, guid: 343417fe7e62a954c83f9ed5a068adf4, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RandomGroundBrush
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_Tile: {fileID: 0}
+  - m_Tile: {fileID: 11400000, guid: fc0e19d74dacad34ea82b68c93c358e9, type: 2}
     m_Matrix:
       e00: 1
       e01: 0
@@ -35,4 +35,24 @@ MonoBehaviour:
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
-  randomTiles: []
+  randomTiles:
+  - {fileID: 11400000, guid: 553560713f0b0a248ab5ca843a724ab7, type: 2}
+  - {fileID: 11400000, guid: 81fe6679b76f8a04d970249f36d0035c, type: 2}
+  - {fileID: 11400000, guid: 81fe6679b76f8a04d970249f36d0035c, type: 2}
+  - {fileID: 11400000, guid: a2984ee1a901bb54fa103c5d271fc6e7, type: 2}
+  - {fileID: 11400000, guid: a2984ee1a901bb54fa103c5d271fc6e7, type: 2}
+  - {fileID: 11400000, guid: c1974a7256ce12548bb9b5857f5a7f24, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
+  - {fileID: 11400000, guid: 0445fd935e9933044accb94dd7624b46, type: 2}
