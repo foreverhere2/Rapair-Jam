@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     public Image[] healthImage;
     public Sprite healthSprite;
     public Movement movement;
+    public GameObject winText;
     public Color white;
     public Color grey;
     private void Start()
@@ -74,6 +75,14 @@ public class Health : MonoBehaviour
             health += 1;
             UpdateHealth();
         }
+        else if(thing.gameObject.CompareTag("House"))
+        {
+            StartCoroutine(Win());
+        }
+        else if(thing.gameObject.CompareTag("Kill"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     void UpdateHealth()
     {
@@ -94,5 +103,11 @@ public class Health : MonoBehaviour
         movement.isDead = true;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    IEnumerator Win()
+    {
+        winText.SetActive(true);
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene(0);
     }
 }
